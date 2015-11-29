@@ -39,6 +39,17 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 
+MY_APPS = (
+    'diesel_upper',
+    'csd',
+    'dilemma',
+    'earthquake',
+    'forgive',
+    'poll',
+    'quine',
+    'quizer'
+)
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -100,3 +111,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+INSTALLED_APPS += MY_APPS

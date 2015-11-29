@@ -16,6 +16,24 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from earthquake import urls as quake_url
+from diesel_upper import urls as dieselupper_url
+from dilemma import urls as dilemma_url
+from forgive import urls as forgive_url
+from poll import urls as poll_url
+from quine import urls as quine_url
+from quizer import urls as quizer_url
+from core import urls as core_urls
+
+
 urlpatterns = [
+    url(r'^$', include(core_urls)),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^earthquake/', include(quake_url)),
+    # url(r'^quizer/', include(quizer_url)),
+    # url(r'^dilemma/', include(dilemma_url)),
+    url(r'^diesel_upper/', include(dieselupper_url)),
+    # url(r'^poll/', include(poll_url)),
+    # url(r'^forgive/', include(forgive_url)),
+    # url(r'^quine/', include(quine_url)),
 ]
