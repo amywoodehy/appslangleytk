@@ -47,7 +47,8 @@ MY_APPS = (
     'forgive',
     'poll',
     'quine',
-    'quizer'
+    'quizer',
+    'watercon',
 )
 
 MIDDLEWARE_CLASSES = (
