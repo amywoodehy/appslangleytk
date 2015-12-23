@@ -16,12 +16,12 @@
 {% block breadcrumbs %}
     {% clear_breadcrumbs %}
     {% breadcrumb "Home" "/" %}
-    {% breadcrumb "Water Consumption application" "watercon.views.Home" %}
+    {% breadcrumb "Water Consumption application" "/watercon" %}
 {% endblock %}
 
     <div id="content" class="container">
+        {% render_breadcrumbs %}
         {% block content %}
-            {% render_breadcrumbs %}
         {% endblock %}
         {% include 'watercon/footer_block.html' %}
     </div>
