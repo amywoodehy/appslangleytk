@@ -1,5 +1,7 @@
 <!doctype html>
 {% load staticfiles %}
+{% load django_bootstrap_breadcrumbs %}
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -11,8 +13,17 @@
 </head>
 <body>
 
-    <div id="content">
-        {% block content %}{% endblock %}
+{% block breadcrumbs %}
+    {% clear_breadcrumbs %}
+    {% breadcrumb "Home" "/" %}
+    {% breadcrumb "Water Consumption application" "watercon.views.Home" %}
+{% endblock %}
+
+    <div id="content" class="container">
+        {% block content %}
+            {% render_breadcrumbs %}
+        {% endblock %}
+        {% include 'watercon/footer_block.html' %}
     </div>
 
     {% block async_js %}

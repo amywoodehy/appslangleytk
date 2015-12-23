@@ -1,0 +1,27 @@
+{% extends 'watercon/base.html' %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Water consumption" "watercon.views.WaterConByYear" %}
+{% endblock %}
+
+{% block content %}
+    <h1>Потребление воды в год</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Год</td>
+                <td>Потребление м<sup>3</sup>/сек</td>
+                <td>Квадратичное значение</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for watercon in waterconyear_list %}
+                <tr>{{ watercon.year }}</tr>
+                <tr>{{ watercon.consumption }}</tr>
+                <tr>{{ watercon.square_consumption }}</tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

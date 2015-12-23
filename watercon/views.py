@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import View
+from django.views.generic import View, ListView
+
+from watercon.models import WaterConYear
 
 
 class Home(View):
@@ -15,6 +17,7 @@ class Upload(View):
         return HttpResponse('upload')
 
     def post(self, request):
+
         return HttpResponse('posted')
 
 
@@ -26,3 +29,7 @@ class Chart(View):
         chart = None
         return HttpResponse(chart)
 
+
+class WaterConByYear(ListView):
+    template_name = 'watercon/waterconmodel.html'
+    model = WaterConYear

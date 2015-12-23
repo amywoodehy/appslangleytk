@@ -1,5 +1,24 @@
 {% extends 'watercon/base.html' %}
 
-{% block content %}
+{% block title %}Загрузка CSV документа{% endblock %}
 
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Upload csv" "watercon.views.upload_csv" %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>Загрузка CSV документа</h1>
+        <p>По стандарту <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> документа, в первой строке должны быть названия столбцов</p>
+        <p>Для данного проекта формат csv документа должен быть следующим: </p>
+        <pre>
+            Year,Consumption
+            2014,5.67
+            2015,4.56
+        </pre>
+        <p>Где <i>Year</i> - это год, <i>Consumption</i> - расход воды в м<sup>3</sup>/сек</p>
+    </div>
+</div>
 {% endblock %}
