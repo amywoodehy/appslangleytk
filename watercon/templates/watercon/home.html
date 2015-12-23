@@ -1,13 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Water Consumption demo</title>
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
-</head>
-<body>
-<div class="container">
+{% extends 'watercon/base.html' %}
+{% block title %}WaterCon application{% endblock %}
+{% block content %}
+    <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1>Расход воды в реках <small>На примере реки Нил</small></h1>
@@ -15,6 +9,7 @@
     </div>
     <div class="row">
         <div class="col-md-4 col-xs-12">
+            {% include 'watercon/upload_form.html' %}
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ex fugiat iusto! Cupiditate eius labore odio quam? Dolores dolorum hic in quaerat temporibus voluptatibus. Asperiores cumque eum facere rem voluptates. Dolorum eos, itaque labore molestiae nesciunt non quis repudiandae voluptatum? A adipisci alias animi aperiam architecto at cupiditate dignissimos dolorem dolores ea eaque ex fugiat hic, illo illum laboriosam laborum, magnam nobis nostrum perspiciatis porro quae quaerat quas quibusdam quis quisquam quod sapiente temporibus veniam veritatis? Consequatur delectus dicta dolor officiis repellendus voluptatibus! Accusantium aliquid amet asperiores atque autem corporis distinctio dolores ducimus error exercitationem id impedit, inventore ipsum iste iure minima nemo nesciunt nobis non nulla omnis, quae qui quidem repellendus sequi, suscipit totam ut. A, eius, laudantium. Delectus eius enim facilis ipsum necessitatibus obcaecati officia quidem, quis repellendus reprehenderit temporibus, tenetur, vitae voluptas! Animi consectetur eligendi ipsa nostrum obcaecati quae recusandae tempore? Aliquid ducimus expedita laudantium nemo repudiandae vel! Amet beatae delectus doloremque exercitationem incidunt inventore pariatur provident quasi, recusandae repellat similique suscipit voluptatibus! Alias, aperiam delectus distinctio dolor dolore est eveniet maiores praesentium quos rerum. Delectus incidunt, magnam. Debitis delectus error nulla officia perferendis reprehenderit. Animi assumenda deserunt dolor doloribus dolorum fuga inventore iste nisi, obcaecati quas?
 
         </div>
@@ -46,7 +41,4 @@
         </div>
     </div>
 </div>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock %}

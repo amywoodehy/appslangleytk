@@ -12,10 +12,10 @@ class Home(View):
 
 class Upload(View):
     def get(self, request):
-        return 'upload'
+        return HttpResponse('upload')
 
     def post(self, request):
-        return 'posted'
+        return HttpResponse('posted')
 
 
 class Chart(View):

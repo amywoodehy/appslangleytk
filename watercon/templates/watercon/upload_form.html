@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% block upload_form %}
+    <div class="form-input">
+        <form action="{% url 'upload' %}" method="post">
+            {% csrf_token %}
+            {% if form.errors %}
+                <span class="has-error"></span>
+            {% endif %}
+            <label for="csv_file">Введите CSV файл</label>
+            <input type="file" class="btn btn-default btn-file " id="csv_file">
+            <button type="submit" class="btn btn-default">Submit</button>
+            {% if form.csv_file.error %}
+                <p class="errors">
+                    Загрузите правильный CSV файл. {% url 'upload_csv' %}
+                </p>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}
