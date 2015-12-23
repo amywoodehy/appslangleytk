@@ -24,7 +24,7 @@ from poll import urls as poll_url
 from quine import urls as quine_url
 from quizer import urls as quizer_url
 from core import urls as core_urls
-from watercon import url as watercon_url
+from watercon import urls as watercon_url
 
 
 urlpatterns = [
