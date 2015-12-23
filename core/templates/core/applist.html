@@ -5,12 +5,24 @@
     <title>App list</title>
 </head>
 <body>
-<ul>
-{% for app in app_list %}
-    <li>
-        <a href="/{{ app }}">{{ app }}</a>
-    </li>
-{% endfor %}
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Available apps by <small><a href="http://langley.tk/">Langley.TK</a></small></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+            {% for app in app_list %}
+                <li>
+                    <a href="/{{ app }}">{{ app }}</a>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
