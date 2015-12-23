@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>App list</title>
 </head>
 <body>
-
+<ul>
+{% for app in app_list %}
+    <li>
+        <a href="/{{ app }}">{{ app }}</a>
+    </li>
+{% endfor %}
+</ul>
 </body>
 </html>

@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 )
 
 MY_APPS = (
+    'core',
     'diesel_upper',
     'csd',
     'dilemma',
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'appslangleytk.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, app, 'templates') for app in MY_APPS],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,3 +116,6 @@ STATIC_URL = '/static/'
 
 
 INSTALLED_APPS += MY_APPS
+
+
+# TEMPLATE_DIRS = [os.path.join(BASE_DIR, app, 'templates') for app in MY_APPS]
