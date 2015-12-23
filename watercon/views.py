@@ -4,8 +4,10 @@ from django.views.generic import View
 
 
 class Home(View):
+    template_name = 'watercon/home.html'
+
     def get(self, request):
-        return 'Hello world'
+        return render(request, self.template_name)
 
 
 class Upload(View):
@@ -23,3 +25,4 @@ class Chart(View):
     def post(self, request):
         chart = None
         return HttpResponse(chart)
+
