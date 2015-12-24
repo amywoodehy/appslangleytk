@@ -1,13 +1,19 @@
 {% block upload_form %}
-    <div class="form-input">
+    <div class="form-input form-inline">
         <form action="{% url 'upload' %}" method="post">
             {% csrf_token %}
             {% if form.errors %}
-                <span class="has-error"></span>
+                <span class="has-error">
+
+                </span>
             {% endif %}
             <label for="csv_file">Введите CSV файл</label>
-            <input type="file" class="btn btn-default btn-file " id="csv_file">
-            <button type="submit" class="btn btn-default">Submit</button>
+            <input type="file" class="btn btn-default btn-file
+                {% if form.csv_file.error %}
+                    has-error
+                {% endif %}
+            " id="csv_file">
+            <input type="submit" class="btn btn-default">
             {% if form.csv_file.error %}
                 <p class="errors">
                     Загрузите правильный CSV файл. {% url 'upload_csv' %}
