@@ -1,5 +1,6 @@
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from datetime import datetime
 
 
 class WaterConYear(models.Model):
@@ -43,3 +44,15 @@ class WaterConYear(models.Model):
             }
             for year, con, con2 in self.objects.all()
         ]
+
+
+def csv_file_path(instance, filename):
+    name, format = filename.split('.')
+    new_filename = name + datetime.now().strftime('%Y-%m-%d') + format
+    return 'csv/' + new_filename
+
+
+class UploadedCSV(models.Model):
+    name = models.CharField(max_length=128)
+    date_upload = models.DateField(default=datetime.now)
+    file = models.FileField(upload_to=csv_file_path)

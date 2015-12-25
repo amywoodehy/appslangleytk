@@ -1,0 +1,25 @@
+{% extends 'watercon/base.html' %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Uploaded CSV files" "watercon.views.UploadedCSVList" %}
+{% endblock %}
+
+{% block content %}
+    <h1>Загруженные файлы</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Файл</td>
+                <td>Дата загрузки</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in uploadedcsv_list %}
+                <tr><a href="{{ file.file }}">{{ file.name }}</a></tr>
+                <tr>{{ file.date_upload }}</tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

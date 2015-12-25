@@ -7,12 +7,15 @@
 
                 </span>
             {% endif %}
-            <label for="csv_file">Введите CSV файл</label>
+            <label for="name">Название реки</label>
+            <input type="text" id="name" name="name">
+
+            <label for="csv_file">Выберите <a href="{% url 'upload_csv' %}">CSV файл</a></label>
             <input type="file" class="btn btn-default btn-file
                 {% if form.csv_file.error %}
                     has-error
                 {% endif %}
-            " id="csv_file">
+            " id="csv_file" name="csv_file">
             <input type="submit" class="btn btn-default">
             {% if form.csv_file.error %}
                 <p class="errors">

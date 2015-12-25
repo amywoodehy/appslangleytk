@@ -1,8 +1,7 @@
 from django.forms import forms
 
 
-class InputCSV(forms.Form):
-    csv_file = forms.FileField()
+class InputCSVForm(forms.Form):
+    name = forms.TextInput()
+    csv_file = forms.FileField(required=True)
 
-    def is_valid(self):
-        return True
